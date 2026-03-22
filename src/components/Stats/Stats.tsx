@@ -2,28 +2,42 @@ import { stats } from '../../data/formations';
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-cegos-dark relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-cegos-red/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cegos-red/5 rounded-full blur-3xl" />
+    <section style={{
+      backgroundColor: '#1D0000',
+      padding: '4rem 0',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      {/* Decorative blurs */}
+      <div style={{ position: 'absolute', top: 0, right: 0, width: '18rem', height: '18rem', background: 'rgba(230,35,58,0.1)', borderRadius: '50%', filter: 'blur(60px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '24rem', height: '24rem', background: 'rgba(230,35,58,0.05)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
-      <div className="relative max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+        {/* Titre centré */}
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'white', marginBottom: '0.75rem' }}>
             Les chiffres clés Cegos
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p style={{ color: '#9ca3af', fontSize: '1rem' }}>
             Un acteur de référence de la formation professionnelle depuis plus de 50 ans
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Stats grid centré */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '2rem',
+          textAlign: 'center',
+        }}>
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-cegos-red mb-2">
+            <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e6233a', lineHeight: 1 }}>
                 {stat.value}
               </div>
-              <div className="text-gray-300 text-sm md:text-base">
+              <div style={{ color: '#d1d5db', fontSize: '0.9rem' }}>
                 {stat.label}
               </div>
             </div>

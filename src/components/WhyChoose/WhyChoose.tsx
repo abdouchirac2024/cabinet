@@ -3,31 +3,37 @@ import { Award, Users, Globe, Laptop, BookOpen, HeadphonesIcon } from 'lucide-re
 const reasons = [
   {
     icon: Award,
+    color: '#e6233a',
     title: "Expertise reconnue",
     description: "Plus de 50 ans d'expérience dans la formation professionnelle, avec des formateurs experts dans leur domaine.",
   },
   {
     icon: Users,
+    color: '#e6233a',
     title: "Approche personnalisée",
     description: "Des parcours adaptés à vos besoins spécifiques, en format inter ou intra-entreprise.",
   },
   {
     icon: Globe,
+    color: '#e6233a',
     title: "Présence internationale",
     description: "Présent dans plus de 50 pays, nous accompagnons vos projets de formation à l'international.",
   },
   {
     icon: Laptop,
+    color: '#e6233a',
     title: "Digital Learning",
     description: "Des solutions de formation digitales innovantes : e-learning, classes virtuelles, blended learning.",
   },
   {
     icon: BookOpen,
+    color: '#e6233a',
     title: "Certifications",
     description: "Des formations certifiantes et éligibles au CPF pour valoriser vos compétences.",
   },
   {
     icon: HeadphonesIcon,
+    color: '#e6233a',
     title: "Accompagnement",
     description: "Un conseiller dédié vous accompagne dans la construction de votre plan de formation.",
   },
@@ -35,30 +41,60 @@ const reasons = [
 
 export default function WhyChoose() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-cegos-dark mb-4">
+    <section style={{ padding: '4rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
+        {/* Titre centré */}
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#1D0000', marginBottom: '0.75rem' }}>
             Pourquoi choisir Cegos ?
           </h2>
-          <p className="text-cegos-gray text-lg max-w-2xl mx-auto">
+          <p style={{ color: '#6b7280', fontSize: '1rem', maxWidth: '540px', margin: '0 auto' }}>
             Un partenaire de confiance pour le développement des compétences de vos collaborateurs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grille 3 colonnes centrée */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
               <div
                 key={index}
-                className="group p-8 rounded-2xl bg-white border border-cegos-border hover:border-cegos-red/30 hover:shadow-lg transition-all duration-300"
+                style={{
+                  padding: '2rem',
+                  borderRadius: '1rem',
+                  backgroundColor: 'white',
+                  border: '1px solid #e5e7eb',
+                  transition: 'box-shadow 0.2s, border-color 0.2s',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(230,35,58,0.12)';
+                  (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(230,35,58,0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+                  (e.currentTarget as HTMLDivElement).style.borderColor = '#e5e7eb';
+                }}
               >
-                <div className="w-14 h-14 bg-cegos-red/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-cegos-red group-hover:scale-110 transition-all duration-300">
-                  <Icon size={24} className="text-cegos-red group-hover:text-white transition-colors" />
+                <div style={{
+                  width: '3.25rem',
+                  height: '3.25rem',
+                  backgroundColor: 'rgba(230,35,58,0.1)',
+                  borderRadius: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1.25rem',
+                }}>
+                  <Icon size={24} color="#e6233a" />
                 </div>
-                <h3 className="text-xl font-bold text-cegos-dark mb-3">{reason.title}</h3>
-                <p className="text-cegos-gray text-sm leading-relaxed">{reason.description}</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#1D0000', marginBottom: '0.5rem' }}>
+                  {reason.title}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
+                  {reason.description}
+                </p>
               </div>
             );
           })}

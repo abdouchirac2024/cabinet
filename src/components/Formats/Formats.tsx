@@ -5,54 +5,85 @@ const formats = [
     icon: Users,
     title: "Présentiel",
     description: "Formations en salle avec un formateur expert, favorisant les échanges et la pratique.",
-    color: "bg-blue-500",
+    bg: '#3b82f6',
   },
   {
     icon: Monitor,
     title: "Classe virtuelle",
     description: "Formations à distance en temps réel avec un formateur, interaction garantie.",
-    color: "bg-green-500",
+    bg: '#22c55e',
   },
   {
     icon: Laptop,
     title: "E-learning",
     description: "Modules digitaux accessibles 24/7, à votre rythme et selon vos disponibilités.",
-    color: "bg-purple-500",
+    bg: '#a855f7',
   },
   {
     icon: Smartphone,
     title: "Blended Learning",
     description: "Un parcours combinant présentiel, digital et accompagnement personnalisé.",
-    color: "bg-amber-500",
+    bg: '#f59e0b',
   },
 ];
 
 export default function Formats() {
   return (
-    <section className="py-16 md:py-24 bg-cegos-light">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-cegos-dark mb-4">
+    <section style={{ padding: '4rem 0', backgroundColor: '#f5f5f5', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
+        {/* Titre centré */}
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#1D0000', marginBottom: '0.75rem' }}>
             Des formats adaptés à vos besoins
           </h2>
-          <p className="text-cegos-gray text-lg max-w-2xl mx-auto">
+          <p style={{ color: '#6b7280', fontSize: '1rem', maxWidth: '540px', margin: '0 auto' }}>
             Choisissez le format de formation qui correspond le mieux à vos contraintes et objectifs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grille 4 colonnes */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
           {formats.map((format, index) => {
             const Icon = format.icon;
             return (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-cegos-border hover:-translate-y-1"
+                style={{
+                  backgroundColor: 'white',
+                  borderRadius: '1rem',
+                  padding: '2rem',
+                  textAlign: 'center',
+                  border: '1px solid #e5e7eb',
+                  transition: 'box-shadow 0.2s, transform 0.2s',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
               >
-                <div className={`w-16 h-16 ${format.color} rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform`}>
-                  <Icon size={28} className="text-white" />
+                <div style={{
+                  width: '4rem',
+                  height: '4rem',
+                  backgroundColor: format.bg,
+                  borderRadius: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1.25rem',
+                }}>
+                  <Icon size={26} color="white" />
                 </div>
-                <h3 className="text-xl font-bold text-cegos-dark mb-3">{format.title}</h3>
-                <p className="text-cegos-gray text-sm leading-relaxed">{format.description}</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#1D0000', marginBottom: '0.5rem' }}>
+                  {format.title}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
+                  {format.description}
+                </p>
               </div>
             );
           })}
