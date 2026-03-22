@@ -51,24 +51,53 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-cegos-dark text-white">
+    <footer style={{ backgroundColor: '#1D0000', color: 'white' }}>
+
       {/* Newsletter */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', padding: '3rem 2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Restez informé</h3>
-              <p className="text-gray-400">
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'white' }}>
+                Restez informé
+              </h3>
+              <p style={{ color: '#9ca3af', fontSize: '0.9rem', maxWidth: '400px' }}>
                 Inscrivez-vous à notre newsletter pour recevoir nos actualités et offres de formation
               </p>
             </div>
-            <div className="flex w-full lg:w-auto gap-3">
+            <div style={{ display: 'flex', gap: '0.75rem', flex: '1', maxWidth: '480px', minWidth: '280px' }}>
               <input
                 type="email"
                 placeholder="Votre adresse email"
-                className="flex-1 lg:w-80 px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-cegos-red"
+                style={{
+                  flex: 1,
+                  padding: '0.75rem 1.25rem',
+                  borderRadius: '9999px',
+                  backgroundColor: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  color: 'white',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#e6233a'; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; }}
               />
-              <button className="bg-cegos-red text-white px-6 py-3 rounded-full font-semibold hover:bg-cegos-red-hover transition-colors text-sm whitespace-nowrap">
+              <button
+                style={{
+                  backgroundColor: '#e6233a',
+                  color: 'white',
+                  padding: '0.75rem 1.5rem',
+                  borderRadius: '9999px',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  border: 'none',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#c0182d'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#e6233a'; }}
+              >
                 S'inscrire
               </button>
             </div>
@@ -76,61 +105,67 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Links */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {Object.values(footerLinks).map((section) => (
-            <div key={section.title}>
-              <h4 className="font-bold text-sm mb-4 text-white">{section.title}</h4>
-              <ul className="space-y-2.5">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-cegos-red transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      {/* Liens */}
+      <div style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', padding: '3rem 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+            {Object.values(footerLinks).map((section) => (
+              <div key={section.title}>
+                <h4 style={{ fontWeight: 700, fontSize: '0.875rem', marginBottom: '1rem', color: 'white' }}>
+                  {section.title}
+                </h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  {section.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        style={{ color: '#9ca3af', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = '#e6233a'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af'; }}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Contact + Social */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
-              <a href="tel:+33155001210" className="flex items-center gap-2 hover:text-cegos-red transition-colors">
-                <Phone size={16} />
-                01 55 00 12 10
-              </a>
-              <a href="mailto:contact@cegos.fr" className="flex items-center gap-2 hover:text-cegos-red transition-colors">
-                <Mail size={16} />
-                contact@cegos.fr
-              </a>
-              <span className="flex items-center gap-2">
-                <MapPin size={16} />
-                Paris, France
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
+      {/* Contact + Réseaux sociaux */}
+      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', padding: '1.75rem 2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
               {[
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Facebook, label: "Facebook" },
-                { icon: Youtube, label: "YouTube" },
-              ].map(({ icon: Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-cegos-red transition-colors"
+                { icon: Phone, label: '01 55 00 12 10', href: 'tel:+33155001210' },
+                { icon: Mail, label: 'contact@cegos.fr', href: 'mailto:contact@cegos.fr' },
+                { icon: MapPin, label: 'Paris, France', href: '#' },
+              ].map(({ icon: Icon, label, href }) => (
+                <a key={label} href={href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#9ca3af', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#e6233a'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af'; }}
                 >
-                  <Icon size={18} />
+                  <Icon size={15} />
+                  {label}
+                </a>
+              ))}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              {[
+                { icon: Linkedin, label: 'LinkedIn' },
+                { icon: Twitter, label: 'Twitter' },
+                { icon: Facebook, label: 'Facebook' },
+                { icon: Youtube, label: 'YouTube' },
+              ].map(({ icon: Icon, label }) => (
+                <a key={label} href="#" aria-label={label}
+                  style={{ width: '2.25rem', height: '2.25rem', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s', textDecoration: 'none', color: 'white' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e6233a'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
+                >
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
@@ -138,26 +173,31 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-cegos-red rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
+      {/* Bas de page */}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', padding: '1.5rem 2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ width: '2rem', height: '2rem', backgroundColor: '#e6233a', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ color: 'white', fontWeight: 700, fontSize: '0.875rem' }}>C</span>
               </div>
-              <span>© 2026 Cegos. Tous droits réservés.</span>
+              <span style={{ color: '#6b7280', fontSize: '0.75rem' }}>© 2026 Cegos. Tous droits réservés.</span>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a href="#" className="hover:text-cegos-red transition-colors">Mentions légales</a>
-              <a href="#" className="hover:text-cegos-red transition-colors">Politique de confidentialité</a>
-              <a href="#" className="hover:text-cegos-red transition-colors">Conditions générales</a>
-              <a href="#" className="hover:text-cegos-red transition-colors">Cookies</a>
-              <a href="#" className="hover:text-cegos-red transition-colors">Plan du site</a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+              {['Mentions légales', 'Politique de confidentialité', 'Conditions générales', 'Cookies', 'Plan du site'].map((item) => (
+                <a key={item} href="#"
+                  style={{ color: '#6b7280', fontSize: '0.75rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#e6233a'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = '#6b7280'; }}
+                >
+                  {item}
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
     </footer>
   );
 }
