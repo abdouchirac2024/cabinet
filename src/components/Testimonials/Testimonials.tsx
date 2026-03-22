@@ -1,36 +1,91 @@
-import { Quote } from 'lucide-react';
 import { testimonials } from '../../data/formations';
 
 export default function Testimonials() {
   return (
-    <section className="py-16 md:py-24 bg-cegos-light">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-cegos-dark mb-4">
+    <section style={{ padding: '4rem 0', backgroundColor: '#f5f5f5', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
+        {/* Titre centré */}
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#1D0000', marginBottom: '0.75rem' }}>
             Ils nous font confiance
           </h2>
-          <p className="text-cegos-gray text-lg max-w-2xl mx-auto">
+          <p style={{ color: '#6b7280', fontSize: '1rem', maxWidth: '480px', margin: '0 auto' }}>
             Découvrez les témoignages de nos clients et participants
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Grille 3 colonnes */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 relative"
+              style={{
+                backgroundColor: 'white',
+                borderRadius: '1rem',
+                padding: '2rem',
+                position: 'relative',
+                boxShadow: '0 1px 4px rgba(0,0,0,0.07)',
+                transition: 'box-shadow 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 1px 4px rgba(0,0,0,0.07)'; }}
             >
-              <Quote size={32} className="text-cegos-red/20 absolute top-6 right-6" />
-              <p className="text-cegos-dark text-sm leading-relaxed mb-6 relative z-10">
+              {/* Guillemet décoratif */}
+              <div style={{
+                position: 'absolute',
+                top: '1.25rem',
+                right: '1.5rem',
+                fontSize: '4rem',
+                lineHeight: 1,
+                color: 'rgba(230,35,58,0.12)',
+                fontFamily: 'Georgia, serif',
+                fontWeight: 900,
+                userSelect: 'none',
+              }}>
+                "
+              </div>
+
+              {/* Citation */}
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#374151',
+                lineHeight: 1.7,
+                marginBottom: '1.5rem',
+                position: 'relative',
+                zIndex: 1,
+              }}>
                 "{t.text}"
               </p>
-              <div className="flex items-center gap-3 border-t border-cegos-border pt-4">
-                <div className="w-12 h-12 bg-cegos-red rounded-full flex items-center justify-center text-white font-bold text-sm">
+
+              {/* Auteur */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                paddingTop: '1.25rem',
+                borderTop: '1px solid #e5e7eb',
+              }}>
+                <div style={{
+                  width: '3rem',
+                  height: '3rem',
+                  backgroundColor: '#e6233a',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
+                  flexShrink: 0,
+                }}>
                   {t.avatar}
                 </div>
                 <div>
-                  <div className="font-bold text-cegos-dark text-sm">{t.name}</div>
-                  <div className="text-cegos-gray text-xs">{t.role} - {t.company}</div>
+                  <div style={{ fontWeight: 700, color: '#1D0000', fontSize: '0.9rem' }}>{t.name}</div>
+                  <div style={{ color: '#6b7280', fontSize: '0.78rem' }}>{t.role} — {t.company}</div>
                 </div>
               </div>
             </div>
