@@ -4,8 +4,8 @@ import Actualites from './components/Actualites/Actualites';
 import Categories from './components/Categories/Categories';
 import Centenaire from './components/Centenaire/Centenaire';
 import CarboneCalculator from './components/CarboneCalculator/CarboneCalculator';
-import Formations from './components/Formations/Formations';
 import Stats from './components/Stats/Stats';
+import Solutions from './components/Solutions/Solutions';
 import WhyChoose from './components/WhyChoose/WhyChoose';
 import Formats from './components/Formats/Formats';
 import Testimonials from './components/Testimonials/Testimonials';
@@ -22,8 +22,8 @@ function App() {
         <Categories />
         <Centenaire />
         <CarboneCalculator />
-        <Formations />
         <Stats />
+        <Solutions />
         <WhyChoose />
         <Formats />
         <Testimonials />
