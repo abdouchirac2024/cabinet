@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cegos-dark: #1D0000;
-  --color-cegos-red: #e6233a;
-  --color-cegos-red-hover: #d41e33;
-  --color-cegos-light: #f5f5f5;
+  --color-cegos-dark: #0f2044;
+  --color-cegos-red: #c9921a;
+  --color-cegos-red-hover: #b07e15;
+  --color-cegos-light: #f5f7fa;
   --color-cegos-gray: #6b7280;
   --color-cegos-border: #e5e7eb;
   --font-family-heading: 'Raleway', system-ui, sans-serif;

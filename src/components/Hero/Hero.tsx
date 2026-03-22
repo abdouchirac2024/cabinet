@@ -2,11 +2,11 @@ import { Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const placeholders = [
-  "Comment financer ma formation Excel",
-  "Formation management d'équipe",
-  "Gestion de projet agile",
-  "Formation leadership",
-  "Développement personnel",
+  "Formation droit des affaires",
+  "Compliance et RGPD",
+  "Droit du travail pour managers",
+  "Formation juristes d'entreprise",
+  "Legaltech et outils numériques",
 ];
 
 export default function Hero() {
@@ -16,7 +16,6 @@ export default function Hero() {
 
   useEffect(() => {
     const currentPlaceholder = placeholders[placeholderIndex];
-
     if (isTyping) {
       if (displayText.length < currentPlaceholder.length) {
         const timeout = setTimeout(() => {
@@ -45,40 +44,41 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80"
-          alt="Formation professionnelle"
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80"
+          alt="Consulting juridique et formation"
           className="w-full h-full object-cover"
         />
-        {/* Overlay gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f2044]/90 via-[#0f2044]/60 to-[#0f2044]/20" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16 md:py-24 w-full">
-        <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-cegos-dark leading-tight mb-10">
-            Trouvez la solution de
-            <br />
-            formation adaptée à
-            <br />
-            vos besoins
+      <div style={{ position: 'relative', maxWidth: '1200px', width: '100%', padding: '4rem 2rem', margin: '0 auto' }}>
+        <div style={{ maxWidth: '600px' }}>
+          <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: 'white', lineHeight: 1.25, marginBottom: '2.5rem' }}>
+            Expertise juridique &<br />
+            formation professionnelle<br />
+            <span style={{ color: '#c9921a' }}>adaptées à vos besoins</span>
           </h1>
         </div>
 
-        {/* Big centered search bar */}
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-xl shadow-xl p-2 flex items-center">
-            <Search size={24} className="text-cegos-gray ml-4 mr-3 flex-shrink-0" />
+        {/* Barre de recherche */}
+        <div style={{ maxWidth: '680px' }}>
+          <div style={{ backgroundColor: 'white', borderRadius: '0.75rem', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', padding: '0.5rem', display: 'flex', alignItems: 'center' }}>
+            <Search size={22} color="#6b7280" style={{ marginLeft: '1rem', marginRight: '0.75rem', flexShrink: 0 }} />
             <input
               type="text"
               placeholder={displayText + '|'}
-              className="flex-1 py-4 text-base md:text-lg text-cegos-dark outline-none bg-transparent placeholder-cegos-gray/70"
+              style={{ flex: 1, padding: '0.875rem 0', fontSize: '1rem', color: '#0f2044', outline: 'none', background: 'transparent' }}
             />
-            <button className="bg-cegos-red text-white px-6 md:px-8 py-4 rounded-lg font-semibold hover:bg-cegos-red-hover transition-colors text-sm whitespace-nowrap hidden sm:block">
+            <button style={{ backgroundColor: '#c9921a', color: 'white', padding: '0.875rem 1.75rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>
               Rechercher
             </button>
-            <button className="bg-cegos-red text-white p-4 rounded-lg hover:bg-cegos-red-hover transition-colors sm:hidden">
-              <Search size={20} />
-            </button>
+          </div>
+          <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            {['Droit des affaires', 'RGPD', 'Droit du travail', 'Compliance'].map((tag) => (
+              <a key={tag} href="#" style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', padding: '0.35rem 0.9rem', borderRadius: '9999px', fontSize: '0.8rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.3)' }}>
+                {tag}
+              </a>
+            ))}
           </div>
         </div>
       </div>

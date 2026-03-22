@@ -1,47 +1,40 @@
 import { useState } from 'react';
-import { Search, Menu, X, ChevronRight, User, Phone, Mail, ShoppingCart } from 'lucide-react';
+import { Search, Menu, X, ChevronRight, User, Phone, Mail } from 'lucide-react';
 
 const formationDomains = {
   col1: [
-    "Achats", "Assistant(e)", "Banque", "Bureautique - PAO/CAO", "Changement",
-    "Coaching - Accompagnement", "Commercial - Vente", "Communication",
-    "Comptabilité - Fiscalité", "Contrôle de gestion", "Création d'entreprise",
-    "Développement personnel", "Digital",
+    "Droit des affaires", "Droit du travail", "Droit pénal des affaires",
+    "Droit immobilier", "Droit de la propriété intellectuelle",
+    "Droit des contrats", "Droit bancaire",
   ],
   col2: [
-    "Direction de l'entreprise", "Droit des affaires", "Droit social",
-    "Efficacité professionnelle", "Finance - Trésorerie", "Formation de formateurs",
-    "Gestion du temps", "Immo & Services généraux", "Informatique - SI",
-    "Innovation - Créativité", "IA - Intelligence Artificielle", "International",
-    "Logistique - Supply chain",
+    "Compliance & RGPD", "Fiscalité des entreprises", "Droit social",
+    "Ressources Humaines", "Management juridique",
+    "Communication juridique", "Legaltech & IA juridique",
   ],
   col3: [
-    "Management", "Marketing", "Organisation - Audit", "Paie/Admin. du personnel",
-    "Production - Lean", "Projet", "Qualité-Santé-Sécurité-Env", "QVCT",
-    "Relation client", "Ressources Humaines", "RSE - Développement durable",
-    "Secteur public", "Soft skills",
+    "Formation des avocats", "Formation des juristes d'entreprise",
+    "Développement personnel", "Leadership & Management",
+    "Prise de parole", "Négociation juridique",
+    "Médiation & Arbitrage",
   ],
   col4: [
     { label: "Cycles certifiants", highlight: false },
-    { label: "Formations Adaptive Learning", highlight: false },
+    { label: "Formations CPF éligibles", highlight: false },
     { label: "Formations à distance", highlight: false },
-    { label: "Formations Best", highlight: false },
-    { label: "Formations éligibles CPF", highlight: false },
-    { label: "Formations en anglais", highlight: false },
-    { label: "Formations obligatoires", highlight: false },
-    { label: "Formations PME", highlight: false },
-    { label: "Mastères spécialisés", highlight: false },
+    { label: "Formations intra-entreprise", highlight: false },
+    { label: "Formations sur-mesure", highlight: false },
     { label: "▶ Nouveautés 2026", highlight: true },
   ],
 };
 
 const navItems = [
-  { label: "Domaines de formation", href: "/formations", hasMegaMenu: true },
-  { label: "Solutions", href: "/solutions", hasDropdown: true },
-  { label: "Vous êtes", href: "/vous-etes", hasDropdown: true },
-  { label: "CPF | Financements", href: "/cpf", hasDropdown: true },
-  { label: "Ressources", href: "/ressources", hasDropdown: true },
-  { label: "Le Mag", href: "/mag", isMag: true },
+  { label: "Nos formations", href: "/formations", hasMegaMenu: true },
+  { label: "Services", href: "/services", hasDropdown: true },
+  { label: "À propos", href: "/a-propos", hasDropdown: false },
+  { label: "Blog / Ressources", href: "/blog", hasDropdown: false },
+  { label: "Témoignages", href: "/temoignages", hasDropdown: false },
+  { label: "Contact", href: "/contact", isMag: true },
 ];
 
 export default function Header() {
@@ -53,28 +46,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white">
       {/* ====== Promo banner ====== */}
       {promoVisible && (
-        <div className="relative bg-gradient-to-r from-[#6b0f3a] via-[#8b1a4a] to-[#c2185b] overflow-hidden">
-          {/* Decorative curves */}
-          <svg className="absolute right-32 top-0 h-full w-72 opacity-20" viewBox="0 0 300 70" preserveAspectRatio="none">
-            <path d="M50,0 C120,20 100,50 50,70" stroke="white" strokeWidth="3" fill="none" />
-            <path d="M100,0 C170,25 150,45 100,70" stroke="white" strokeWidth="2" fill="none" />
-            <path d="M150,0 C220,30 180,40 130,70" stroke="white" strokeWidth="2" fill="none" />
-          </svg>
-          <div className="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-center text-white text-sm gap-1">
-            <span>Profitez de</span>
-            <span className="text-orange-300 font-extrabold text-xl mx-1">20% de remise</span>
-            <span>sur votre 1<sup className="text-[9px]">ère</sup> formation*</span>
-            <a
-              href="#"
-              className="ml-5 border border-white text-white px-5 py-1.5 rounded-full text-xs font-semibold hover:bg-white hover:text-[#8b1a4a] transition-colors"
-            >
+        <div style={{ position: 'relative', background: 'linear-gradient(90deg, #0f2044 0%, #1a3a6e 50%, #0f2044 100%)', overflow: 'hidden' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.875rem', gap: '0.25rem' }}>
+            <span>Bénéficiez de</span>
+            <span style={{ color: '#c9921a', fontWeight: 800, fontSize: '1.1rem', margin: '0 0.25rem' }}>10% de remise</span>
+            <span>sur votre 1<sup style={{ fontSize: '9px' }}>ère</sup> formation*</span>
+            <a href="#" style={{ marginLeft: '1.25rem', border: '1px solid white', color: 'white', padding: '0.35rem 1.25rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, textDecoration: 'none' }}>
               J'en profite
             </a>
           </div>
-          <button
-            onClick={() => setPromoVisible(false)}
-            className="absolute right-5 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
-          >
+          <button onClick={() => setPromoVisible(false)} style={{ position: 'absolute', right: '1.25rem', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.6)', background: 'none', border: 'none', cursor: 'pointer' }}>
             <X size={20} />
           </button>
         </div>
@@ -83,28 +64,15 @@ export default function Header() {
       {/* ====== Main header row ====== */}
       <div className="border-b border-cegos-border">
         <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between h-[80px] gap-6">
-          {/* Logo + tagline */}
-          <a href="/" className="flex items-center gap-4 flex-shrink-0">
-            {/* Cegos logo SVG */}
-            <svg width="150" height="65" viewBox="0 0 300 130" className="flex-shrink-0">
-              <g fill="#1D0000">
-                {/* Stylized symbol above - loops like "io" */}
-                <path d="M45,35 C45,15 25,5 15,20 C5,35 20,45 30,40" stroke="#1D0000" strokeWidth="4" fill="none" strokeLinecap="round"/>
-                <path d="M30,40 C40,35 55,25 50,15 C45,5 30,10 35,25" stroke="#1D0000" strokeWidth="4" fill="none" strokeLinecap="round"/>
-                <circle cx="42" cy="8" r="3" fill="#1D0000"/>
-                {/* "cegos" text */}
-                <text x="10" y="100" fontFamily="'Raleway', sans-serif" fontSize="62" fontWeight="800" letterSpacing="-2" fill="#1D0000">cegos</text>
-              </g>
-            </svg>
-            {/* Separator + tagline */}
-            <div className="hidden md:flex items-center gap-4">
-              <div className="w-px h-12 bg-cegos-border"></div>
-              <div className="text-[12px] text-cegos-dark leading-[1.4]">
-                <div className="font-bold">Leader international</div>
-                <div>de la formation</div>
-                <div>professionnelle</div>
-                <div>et continue</div>
-              </div>
+          {/* Logo + nom */}
+          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', flexShrink: 0 }}>
+            {/* Logo FCT */}
+            <div style={{ width: '48px', height: '48px', backgroundColor: '#0f2044', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <span style={{ color: '#c9921a', fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-1px' }}>FCT</span>
+            </div>
+            <div className="hidden md:block">
+              <div style={{ fontWeight: 800, fontSize: '1rem', color: '#0f2044', lineHeight: 1.2 }}>Fotso Consulting</div>
+              <div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#c9921a', lineHeight: 1.2 }}>and Training</div>
             </div>
           </a>
 
@@ -121,10 +89,10 @@ export default function Header() {
           </div>
 
           {/* Right actions */}
-          <div className="hidden md:flex items-center gap-6 text-sm flex-shrink-0">
-            <a href="tel:+33155009595" className="flex items-center gap-2 text-cegos-dark hover:text-cegos-red transition-colors">
+          <div className="hidden md:flex items-center gap-5 text-sm flex-shrink-0">
+            <a href="tel:+237600000000" className="flex items-center gap-2 text-cegos-dark hover:text-cegos-red transition-colors">
               <Phone size={16} />
-              <span className="font-medium">01 55 00 95 95</span>
+              <span className="font-medium">+237 6 00 00 00 00</span>
             </a>
             <a href="/contact" className="flex items-center gap-2 text-cegos-dark hover:text-cegos-red transition-colors">
               <Mail size={16} />
@@ -133,12 +101,6 @@ export default function Header() {
             <a href="/espace-client" className="flex items-center gap-2 text-cegos-dark hover:text-cegos-red transition-colors">
               <User size={16} />
               <span className="font-medium">Espace client</span>
-            </a>
-            <a href="/panier" className="relative text-cegos-dark hover:text-cegos-red transition-colors">
-              <ShoppingCart size={22} />
-              <span className="absolute -top-2 -right-2.5 bg-cegos-red text-white text-[10px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center">
-                0
-              </span>
             </a>
           </div>
 
@@ -182,21 +144,13 @@ export default function Header() {
                   >
                     <div className="max-w-[1280px] mx-auto px-10 py-8">
                       <div className="grid grid-cols-4 gap-8">
-                        <div className="space-y-2.5">
-                          {formationDomains.col1.map((d) => (
-                            <a key={d} href="#" className="block text-[13px] text-gray-300 hover:text-white hover:translate-x-1 transition-all">{d}</a>
-                          ))}
-                        </div>
-                        <div className="space-y-2.5">
-                          {formationDomains.col2.map((d) => (
-                            <a key={d} href="#" className="block text-[13px] text-gray-300 hover:text-white hover:translate-x-1 transition-all">{d}</a>
-                          ))}
-                        </div>
-                        <div className="space-y-2.5">
-                          {formationDomains.col3.map((d) => (
-                            <a key={d} href="#" className="block text-[13px] text-gray-300 hover:text-white hover:translate-x-1 transition-all">{d}</a>
-                          ))}
-                        </div>
+                        {[formationDomains.col1, formationDomains.col2, formationDomains.col3].map((col, i) => (
+                          <div key={i} className="space-y-2.5">
+                            {col.map((d) => (
+                              <a key={d} href="#" className="block text-[13px] text-gray-300 hover:text-white hover:translate-x-1 transition-all">{d}</a>
+                            ))}
+                          </div>
+                        ))}
                         <div className="space-y-2.5">
                           {formationDomains.col4.map((d) => (
                             <a key={d.label} href="#" className={`block text-[13px] transition-all hover:translate-x-1 ${d.highlight ? 'text-cegos-red font-semibold' : 'text-gray-300 hover:text-white'}`}>{d.label}</a>
@@ -222,10 +176,9 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center justify-around py-3 border-b border-cegos-border text-xs text-cegos-dark">
-            <a href="tel:+33155009595" className="flex flex-col items-center gap-1"><Phone size={16} /><span>Appeler</span></a>
+            <a href="tel:+237600000000" className="flex flex-col items-center gap-1"><Phone size={16} /><span>Appeler</span></a>
             <a href="/contact" className="flex flex-col items-center gap-1"><Mail size={16} /><span>Contact</span></a>
-            <a href="/espace-client" className="flex flex-col items-center gap-1"><User size={16} /><span>Espace client</span></a>
-            <a href="/panier" className="flex flex-col items-center gap-1"><ShoppingCart size={16} /><span>Panier</span></a>
+            <a href="/espace-client" className="flex flex-col items-center gap-1"><User size={16} /><span>Mon espace</span></a>
           </div>
           {navItems.map((item) => (
             <a key={item.label} href={item.href} className={`block px-4 py-3.5 text-sm font-medium border-b border-cegos-border ${item.isMag ? 'bg-cegos-dark text-white' : 'text-cegos-dark hover:bg-cegos-light'}`}>

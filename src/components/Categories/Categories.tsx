@@ -4,13 +4,13 @@ export default function Categories() {
   return (
     <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1D0000', marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f2044', marginBottom: '1.5rem' }}>
           Retrouver tous nos domaines de formation
         </h2>
 
         <div
           style={{
-            background: 'linear-gradient(135deg, #0d5c5c 0%, #0a7a6e 50%, #0d5c5c 100%)',
+            background: 'linear-gradient(135deg, #0f2044 0%, #1a3a6e 50%, #0f2044 100%)',
             borderRadius: '1rem',
             padding: '2rem 2.5rem 1.5rem',
             overflow: 'hidden',
@@ -27,7 +27,7 @@ export default function Categories() {
                   gap: '0.4rem',
                   padding: '0.5rem 1rem',
                   borderRadius: '9999px',
-                  border: '1.5px solid rgba(255,255,255,0.45)',
+                  border: '1.5px solid rgba(255,255,255,0.35)',
                   color: 'white',
                   fontSize: '0.875rem',
                   fontWeight: 500,
@@ -36,8 +36,8 @@ export default function Categories() {
                   whiteSpace: 'nowrap',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(201,146,26,0.25)'; e.currentTarget.style.borderColor = '#c9921a'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; }}
               >
                 <span>{cat.icon}</span>
                 <span>{cat.name}</span>
@@ -46,10 +46,7 @@ export default function Categories() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <a
-              href="/formations"
-              style={{ color: 'white', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 500 }}
-            >
+            <a href="/formations" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 500 }}>
               Tous les domaines
             </a>
           </div>
