@@ -2,6 +2,8 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Actualites from './components/Actualites/Actualites';
 import Categories from './components/Categories/Categories';
+import Centenaire from './components/Centenaire/Centenaire';
+import CarboneCalculator from './components/CarboneCalculator/CarboneCalculator';
 import Formations from './components/Formations/Formations';
 import Stats from './components/Stats/Stats';
 import WhyChoose from './components/WhyChoose/WhyChoose';
@@ -18,6 +20,8 @@ function App() {
         <Hero />
         <Actualites />
         <Categories />
+        <Centenaire />
+        <CarboneCalculator />
         <Formations />
         <Stats />
         <WhyChoose />

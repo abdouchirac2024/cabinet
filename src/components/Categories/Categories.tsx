@@ -1,51 +1,58 @@
-import { ArrowRight } from 'lucide-react';
 import { categories } from '../../data/formations';
 
 export default function Categories() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-cegos-dark mb-4">
-            Nos domaines de formation
-          </h2>
-          <p className="text-cegos-gray text-lg max-w-2xl mx-auto">
-            Explorez nos 1 200 formations réparties dans plus de 40 domaines d'expertise
-          </p>
-        </div>
+    <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1D0000', marginBottom: '1.5rem' }}>
+          Retrouver tous nos domaines de formation
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {categories.map((cat) => (
+        <div
+          style={{
+            background: 'linear-gradient(135deg, #0d5c5c 0%, #0a7a6e 50%, #0d5c5c 100%)',
+            borderRadius: '1rem',
+            padding: '2rem 2.5rem 1.5rem',
+            overflow: 'hidden',
+          }}
+        >
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem' }}>
+            {categories.map((cat) => (
+              <a
+                key={cat.id}
+                href={`/formations/${cat.slug}`}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '9999px',
+                  border: '1.5px solid rgba(255,255,255,0.45)',
+                  color: 'white',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  backgroundColor: 'transparent',
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.name}</span>
+              </a>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
             <a
-              key={cat.id}
-              href={`/formations/${cat.slug}`}
-              className="group flex items-center gap-4 p-5 rounded-2xl border border-cegos-border hover:border-cegos-red hover:shadow-lg transition-all duration-300 bg-white"
+              href="/formations"
+              style={{ color: 'white', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 500 }}
             >
-              <div className="w-12 h-12 bg-cegos-light rounded-xl flex items-center justify-center text-2xl group-hover:bg-cegos-red/10 transition-colors flex-shrink-0">
-                {cat.icon}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-cegos-dark text-sm group-hover:text-cegos-red transition-colors">
-                  {cat.name}
-                </h3>
-                <p className="text-cegos-gray text-xs mt-0.5">{cat.count} formations</p>
-              </div>
-              <ArrowRight
-                size={16}
-                className="text-cegos-gray group-hover:text-cegos-red group-hover:translate-x-1 transition-all flex-shrink-0"
-              />
+              Tous les domaines
             </a>
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <a
-            href="/formations"
-            className="inline-flex items-center gap-2 bg-cegos-dark text-white px-8 py-3.5 rounded-full font-semibold hover:bg-cegos-dark/90 transition-colors text-sm"
-          >
-            Voir tous les domaines
-            <ArrowRight size={16} />
-          </a>
+          </div>
         </div>
       </div>
     </section>

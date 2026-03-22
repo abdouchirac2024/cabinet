@@ -18,28 +18,28 @@ const articles = [
 
 export default function Actualites() {
   return (
-    <section className="py-12 md:py-16 bg-white" style={{ display: 'flex', justifyContent: 'center' }}>
+    <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 className="text-2xl md:text-3xl font-bold text-cegos-dark mb-8 md:mb-10" style={{ textAlign: 'center' }}>
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem', color: '#1D0000' }}>
           Nos dernières actualités
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {articles.map((article) => (
             <a
               key={article.id}
               href="#"
-              className="group flex flex-col bg-white rounded overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'white', borderRadius: '0.5rem', overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,0.1)', textDecoration: 'none' }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div style={{ aspectRatio: '4/3', overflow: 'hidden' }}>
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
-              <div className="p-5 md:p-6 flex-grow">
-                <h3 className="text-base md:text-lg font-bold text-cegos-dark leading-snug group-hover:text-cegos-red transition-colors">
+              <div style={{ padding: '1.25rem 1.5rem', flexGrow: 1, backgroundColor: '#f9f9f9' }}>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1D0000', lineHeight: 1.4, margin: 0 }}>
                   {article.title}
                 </h3>
               </div>
