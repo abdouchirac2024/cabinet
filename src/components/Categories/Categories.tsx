@@ -1,8 +1,9 @@
 import {
   Scale, ClipboardList, Handshake, Users, Landmark,
   Coins, ShieldCheck, Building2, MessageSquare,
-  GraduationCap, Target, Laptop, LucideIcon,
+  GraduationCap, Target, Laptop,
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { categories } from '../../data/formations';
 
 const iconMap: Record<string, LucideIcon> = {
