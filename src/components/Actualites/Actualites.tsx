@@ -20,7 +20,7 @@ export default function Actualites() {
   return (
     <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem', color: '#0f2044' }}>
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem', color: '#162354' }}>
           Nos dernières actualités
         </h2>
 
@@ -41,7 +41,7 @@ export default function Actualites() {
                 />
               </div>
               <div style={{ padding: '1.25rem 1.5rem', flexGrow: 1, backgroundColor: '#f9f9f9' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f2044', lineHeight: 1.4, margin: 0 }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#162354', lineHeight: 1.4, margin: 0 }}>
                   {article.title}
                 </h3>
               </div>

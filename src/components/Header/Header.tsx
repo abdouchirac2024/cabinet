@@ -46,10 +46,10 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white">
       {/* ====== Promo banner ====== */}
       {promoVisible && (
-        <div style={{ position: 'relative', background: 'linear-gradient(90deg, #0f2044 0%, #1a3a6e 50%, #0f2044 100%)', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', background: 'linear-gradient(90deg, #162354 0%, #1e3a7a 50%, #162354 100%)', overflow: 'hidden' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.875rem', gap: '0.25rem' }}>
             <span>Bénéficiez de</span>
-            <span style={{ color: '#c9921a', fontWeight: 800, fontSize: '1.1rem', margin: '0 0.25rem' }}>10% de remise</span>
+            <span style={{ color: '#b8861e', fontWeight: 800, fontSize: '1.1rem', margin: '0 0.25rem' }}>10% de remise</span>
             <span>sur votre 1<sup style={{ fontSize: '9px' }}>ère</sup> formation*</span>
             <a href="#" style={{ marginLeft: '1.25rem', border: '1px solid white', color: 'white', padding: '0.35rem 1.25rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, textDecoration: 'none' }}>
               J'en profite
@@ -67,13 +67,11 @@ export default function Header() {
           {/* Logo + nom */}
           <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', flexShrink: 0 }}>
             {/* Logo FCT */}
-            <div style={{ width: '48px', height: '48px', backgroundColor: '#0f2044', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <span style={{ color: '#c9921a', fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-1px' }}>FCT</span>
-            </div>
-            <div className="hidden md:block">
-              <div style={{ fontWeight: 800, fontSize: '1rem', color: '#0f2044', lineHeight: 1.2 }}>Fotso Consulting</div>
-              <div style={{ fontWeight: 600, fontSize: '0.8rem', color: '#c9921a', lineHeight: 1.2 }}>and Training</div>
-            </div>
+            <img
+              src="/logo/logo.jpeg"
+              alt="Fotso Consulting and Training"
+              style={{ height: '64px', width: 'auto', objectFit: 'contain', flexShrink: 0 }}
+            />
           </a>
 
           {/* Search bar */}

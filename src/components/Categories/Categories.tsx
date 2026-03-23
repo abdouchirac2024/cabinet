@@ -4,13 +4,13 @@ export default function Categories() {
   return (
     <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f2044', marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#162354', marginBottom: '1.5rem' }}>
           Retrouver tous nos domaines de formation
         </h2>
 
         <div
           style={{
-            background: 'linear-gradient(135deg, #0f2044 0%, #1a3a6e 50%, #0f2044 100%)',
+            background: 'linear-gradient(135deg, #162354 0%, #1e3a7a 50%, #162354 100%)',
             borderRadius: '1rem',
             padding: '2rem 2.5rem 1.5rem',
             overflow: 'hidden',
@@ -36,7 +36,7 @@ export default function Categories() {
                   whiteSpace: 'nowrap',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(201,146,26,0.25)'; e.currentTarget.style.borderColor = '#c9921a'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(201,146,26,0.25)'; e.currentTarget.style.borderColor = '#b8861e'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; }}
               >
                 <span>{cat.icon}</span>

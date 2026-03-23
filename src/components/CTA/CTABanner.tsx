@@ -2,7 +2,7 @@ export default function CTABanner() {
   return (
     <section style={{
       padding: '4rem 0',
-      background: 'linear-gradient(135deg, #0f2044 0%, #1a3a6e 100%)',
+      background: 'linear-gradient(135deg, #162354 0%, #1e3a7a 100%)',
       display: 'flex',
       justifyContent: 'center',
       position: 'relative',
@@ -22,9 +22,9 @@ export default function CTABanner() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <a
             href="/contact"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#c9921a', color: 'white', padding: '0.85rem 2rem', borderRadius: '9999px', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', border: '2px solid #c9921a', transition: 'all 0.2s' }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#b07e15'; e.currentTarget.style.borderColor = '#b07e15'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#c9921a'; e.currentTarget.style.borderColor = '#c9921a'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#b8861e', color: 'white', padding: '0.85rem 2rem', borderRadius: '9999px', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', border: '2px solid #b8861e', transition: 'all 0.2s' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#9d7519'; e.currentTarget.style.borderColor = '#9d7519'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#b8861e'; e.currentTarget.style.borderColor = '#b8861e'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
             Demander un devis
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

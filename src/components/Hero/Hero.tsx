@@ -48,7 +48,7 @@ export default function Hero() {
           alt="Consulting juridique et formation"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f2044]/90 via-[#0f2044]/60 to-[#0f2044]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#162354]/90 via-[#162354]/60 to-[#162354]/20" />
       </div>
 
       <div style={{ position: 'relative', maxWidth: '1200px', width: '100%', padding: '4rem 2rem', margin: '0 auto' }}>
@@ -56,7 +56,7 @@ export default function Hero() {
           <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: 'white', lineHeight: 1.25, marginBottom: '2.5rem' }}>
             Expertise juridique &<br />
             formation professionnelle<br />
-            <span style={{ color: '#c9921a' }}>adaptées à vos besoins</span>
+            <span style={{ color: '#b8861e' }}>adaptées à vos besoins</span>
           </h1>
         </div>
 
@@ -67,9 +67,9 @@ export default function Hero() {
             <input
               type="text"
               placeholder={displayText + '|'}
-              style={{ flex: 1, padding: '0.875rem 0', fontSize: '1rem', color: '#0f2044', outline: 'none', background: 'transparent' }}
+              style={{ flex: 1, padding: '0.875rem 0', fontSize: '1rem', color: '#162354', outline: 'none', background: 'transparent' }}
             />
-            <button style={{ backgroundColor: '#c9921a', color: 'white', padding: '0.875rem 1.75rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>
+            <button style={{ backgroundColor: '#b8861e', color: 'white', padding: '0.875rem 1.75rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>
               Rechercher
             </button>
           </div>

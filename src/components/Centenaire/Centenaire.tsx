@@ -4,7 +4,7 @@ export default function Centenaire() {
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
         <div
           style={{
-            background: 'linear-gradient(135deg, #0f2044 0%, #1a3a6e 100%)',
+            background: 'linear-gradient(135deg, #162354 0%, #1e3a7a 100%)',
             borderRadius: '1rem',
             padding: '3rem',
             display: 'flex',
@@ -35,7 +35,7 @@ export default function Centenaire() {
                 textDecoration: 'none',
                 transition: 'all 0.2s',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#c9921a'; e.currentTarget.style.borderColor = '#c9921a'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#b8861e'; e.currentTarget.style.borderColor = '#b8861e'; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = 'white'; }}
             >
               Découvrir notre cabinet
@@ -44,7 +44,7 @@ export default function Centenaire() {
 
           {/* Chiffre clé droite */}
           <div style={{ textAlign: 'center', flexShrink: 0 }}>
-            <div style={{ color: '#c9921a', fontSize: '5rem', fontWeight: 900, lineHeight: 1 }}>15+</div>
+            <div style={{ color: '#b8861e', fontSize: '5rem', fontWeight: 900, lineHeight: 1 }}>15+</div>
             <div style={{ color: 'white', fontSize: '1rem', fontWeight: 500, marginTop: '0.25rem' }}>années d'expertise</div>
             <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginTop: '0.5rem' }}>au service des professionnels</div>
           </div>

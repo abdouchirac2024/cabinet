@@ -35,7 +35,7 @@ export default function CarboneCalculator() {
                 textDecoration: 'none',
                 transition: 'all 0.2s',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#c9921a'; e.currentTarget.style.borderColor = '#c9921a'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#b8861e'; e.currentTarget.style.borderColor = '#b8861e'; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = 'white'; }}
             >
               Prendre rendez-vous

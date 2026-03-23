@@ -51,7 +51,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0f2044', color: 'white' }}>
+    <footer style={{ backgroundColor: '#162354', color: 'white' }}>
 
       {/* Newsletter */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center' }}>
@@ -70,13 +70,13 @@ export default function Footer() {
                 type="email"
                 placeholder="Votre adresse email"
                 style={{ flex: 1, padding: '0.75rem 1.25rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', fontSize: '0.875rem', outline: 'none' }}
-                onFocus={(e) => { e.currentTarget.style.borderColor = '#c9921a'; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#b8861e'; }}
                 onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; }}
               />
               <button
-                style={{ backgroundColor: '#c9921a', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '9999px', fontWeight: 600, fontSize: '0.875rem', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background 0.2s' }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#b07e15'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#c9921a'; }}
+                style={{ backgroundColor: '#b8861e', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '9999px', fontWeight: 600, fontSize: '0.875rem', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#9d7519'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#b8861e'; }}
               >
                 S'inscrire
               </button>
@@ -91,7 +91,7 @@ export default function Footer() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
             {Object.values(footerLinks).map((section) => (
               <div key={section.title}>
-                <h4 style={{ fontWeight: 700, fontSize: '0.875rem', marginBottom: '1rem', color: '#c9921a' }}>
+                <h4 style={{ fontWeight: 700, fontSize: '0.875rem', marginBottom: '1rem', color: '#b8861e' }}>
                   {section.title}
                 </h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -99,7 +99,7 @@ export default function Footer() {
                     <li key={link}>
                       <a href="#"
                         style={{ color: '#9ca3af', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s' }}
-                        onMouseEnter={(e) => { e.currentTarget.style.color = '#c9921a'; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = '#b8861e'; }}
                         onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af'; }}
                       >
                         {link}
@@ -125,7 +125,7 @@ export default function Footer() {
               ].map(({ icon: Icon, label, href }) => (
                 <a key={label} href={href}
                   style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#9ca3af', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#c9921a'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#b8861e'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#9ca3af'; }}
                 >
                   <Icon size={15} />
@@ -142,7 +142,7 @@ export default function Footer() {
               ].map(({ icon: Icon, label }) => (
                 <a key={label} href="#" aria-label={label}
                   style={{ width: '2.25rem', height: '2.25rem', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s', textDecoration: 'none', color: 'white' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#c9921a'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#b8861e'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
                 >
                   <Icon size={16} />
@@ -158,7 +158,7 @@ export default function Footer() {
         <div style={{ maxWidth: '1200px', width: '100%', padding: '1.5rem 2rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <div style={{ width: '2rem', height: '2rem', backgroundColor: '#c9921a', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '2rem', height: '2rem', backgroundColor: '#b8861e', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span style={{ color: 'white', fontWeight: 700, fontSize: '0.75rem' }}>FCT</span>
               </div>
               <span style={{ color: '#6b7280', fontSize: '0.75rem' }}>© 2026 Fotso Consulting and Training. Tous droits réservés.</span>
@@ -167,7 +167,7 @@ export default function Footer() {
               {['Mentions légales', 'Politique de confidentialité', 'Conditions générales', 'Cookies', 'Plan du site'].map((item) => (
                 <a key={item} href="#"
                   style={{ color: '#6b7280', fontSize: '0.75rem', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#c9921a'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#b8861e'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#6b7280'; }}
                 >
                   {item}

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cegos-dark: #0f2044;
-  --color-cegos-red: #c9921a;
-  --color-cegos-red-hover: #b07e15;
+  --color-cegos-dark: #162354;
+  --color-cegos-red: #b8861e;
+  --color-cegos-red-hover: #9d7519;
   --color-cegos-light: #f5f7fa;
   --color-cegos-gray: #6b7280;
   --color-cegos-border: #e5e7eb;

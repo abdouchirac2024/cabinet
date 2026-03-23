@@ -3,11 +3,11 @@ const solutions = [
     id: 1,
     title: 'Consulting juridique',
     description: "Accompagnement stratégique et opérationnel dans vos problématiques juridiques : contrats, litiges, conformité, restructuration et développement d'activité.",
-    color: '#c9921a',
+    color: '#b8861e',
     icon: (
       <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
-        <path d="M32 8L8 20v4c0 16 10 28 24 32 14-4 24-16 24-32v-4L32 8z" stroke="#c9921a" strokeWidth="2.5" fill="none"/>
-        <path d="M22 32l7 7 13-13" stroke="#c9921a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M32 8L8 20v4c0 16 10 28 24 32 14-4 24-16 24-32v-4L32 8z" stroke="#b8861e" strokeWidth="2.5" fill="none"/>
+        <path d="M22 32l7 7 13-13" stroke="#b8861e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -86,7 +86,7 @@ export default function Solutions() {
   return (
     <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0f2044', marginBottom: '2rem' }}>
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#162354', marginBottom: '2rem' }}>
           Nos services
         </h2>
 
@@ -101,7 +101,7 @@ export default function Solutions() {
                 gap: '1.25rem',
                 padding: '1.75rem',
                 borderRadius: '0.75rem',
-                backgroundColor: sol.dark ? '#0f2044' : '#f5f7fa',
+                backgroundColor: sol.dark ? '#162354' : '#f5f7fa',
                 textDecoration: 'none',
                 transition: 'box-shadow 0.2s',
               }}

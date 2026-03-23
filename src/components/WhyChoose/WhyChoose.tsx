@@ -38,7 +38,7 @@ export default function WhyChoose() {
     <section style={{ padding: '4rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0f2044', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#162354', marginBottom: '0.75rem' }}>
             Pourquoi choisir Fotso Consulting ?
           </h2>
           <p style={{ color: '#6b7280', fontSize: '1rem', maxWidth: '540px', margin: '0 auto' }}>
@@ -62,7 +62,7 @@ export default function WhyChoose() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(15,32,68,0.1)';
-                  (e.currentTarget as HTMLDivElement).style.borderColor = '#c9921a';
+                  (e.currentTarget as HTMLDivElement).style.borderColor = '#b8861e';
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
@@ -76,9 +76,9 @@ export default function WhyChoose() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: '1.25rem',
                 }}>
-                  <Icon size={24} color="#c9921a" />
+                  <Icon size={24} color="#b8861e" />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0f2044', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#162354', marginBottom: '0.5rem' }}>
                   {reason.title}
                 </h3>
                 <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
