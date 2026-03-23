@@ -1,4 +1,5 @@
-import { Award, Users, Globe, BookOpen, HeadphonesIcon, Scale } from 'lucide-react';
+import { Award, Users, Globe, BookOpen, HeadphonesIcon, Scale, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const reasons = [
   {
@@ -34,6 +35,19 @@ const reasons = [
 ];
 
 export default function WhyChoose() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-slide every 4s on mobile
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % reasons.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prev = () => setActiveIndex((i) => (i - 1 + reasons.length) % reasons.length);
+  const next = () => setActiveIndex((i) => (i + 1) % reasons.length);
+
   return (
     <section className="section-pad" style={{ backgroundColor: 'white' }}>
       <div className="container-xl">
@@ -47,58 +61,91 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        {/* ── Mobile : scroll horizontal ── */}
-        <div
-          className="flex sm:hidden gap-4 pb-4"
-          style={{ overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}
-        >
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon;
-            return (
-              <div
-                key={index}
-                className="flex-shrink-0 rounded-2xl p-5 flex flex-col"
-                style={{
-                  width: '72vw',
-                  maxWidth: '280px',
-                  backgroundColor: 'white',
-                  border: '1.5px solid #e5e7eb',
-                  scrollSnapAlign: 'start',
-                  boxShadow: '0 2px 12px rgba(22,35,84,0.07)',
-                }}
-              >
+        {/* ── Mobile : carousel une seule card visible ── */}
+        <div className="why-carousel relative">
+          {/* Card active */}
+          <div style={{ minHeight: '200px' }}>
+            {reasons.map((reason, index) => {
+              const Icon = reason.icon;
+              return (
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0"
-                  style={{ backgroundColor: 'rgba(184,134,30,0.1)' }}
+                  key={index}
+                  data-carousel-slide-to={index}
+                  style={{
+                    display: index === activeIndex ? 'block' : 'none',
+                    animation: index === activeIndex ? 'fadeIn 0.4s ease' : 'none',
+                  }}
                 >
-                  <Icon size={22} color="#b8861e" />
+                  <div
+                    className="rounded-2xl p-5 flex flex-col mx-auto"
+                    style={{
+                      maxWidth: '340px',
+                      backgroundColor: 'white',
+                      border: '1.5px solid #e5e7eb',
+                      boxShadow: '0 2px 12px rgba(22,35,84,0.07)',
+                    }}
+                  >
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0"
+                      style={{ backgroundColor: 'rgba(184,134,30,0.1)' }}
+                    >
+                      <Icon size={22} color="#b8861e" />
+                    </div>
+                    <h3 className="text-base font-bold mb-2" style={{ color: '#162354' }}>
+                      {reason.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>
+                      {reason.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-base font-bold mb-2" style={{ color: '#162354' }}>
-                  {reason.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>
-                  {reason.description}
-                </p>
-              </div>
-            );
-          })}
-          {/* Spacer fin de scroll */}
-          <div className="flex-shrink-0 w-4" />
-        </div>
+              );
+            })}
+          </div>
 
-        {/* Indicateurs de scroll mobile */}
-        <div className="flex sm:hidden justify-center gap-1.5 mt-3">
-          {reasons.map((_, i) => (
-            <div
-              key={i}
-              className="rounded-full"
-              style={{ width: i === 0 ? '1.5rem' : '0.4rem', height: '0.4rem', backgroundColor: i === 0 ? '#b8861e' : '#d1d5db', transition: 'all 0.3s' }}
-            />
-          ))}
+          {/* Flèches */}
+          <button
+            onClick={prev}
+            className="absolute left-1 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full shadow-md"
+            style={{ width: '2rem', height: '2rem', backgroundColor: 'white', border: '1.5px solid #e5e7eb', zIndex: 10 }}
+            aria-label="Précédent"
+          >
+            <ChevronLeft size={16} color="#162354" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full shadow-md"
+            style={{ width: '2rem', height: '2rem', backgroundColor: 'white', border: '1.5px solid #e5e7eb', zIndex: 10 }}
+            aria-label="Suivant"
+          >
+            <ChevronRight size={16} color="#162354" />
+          </button>
+
+          {/* Indicateurs cliquables */}
+          <div className="flex justify-center gap-2 mt-4">
+            {reasons.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                data-carousel-slide-to={i}
+                aria-label={`Slide ${i + 1}`}
+                style={{
+                  width: i === activeIndex ? '1.5rem' : '0.5rem',
+                  height: '0.5rem',
+                  borderRadius: '9999px',
+                  backgroundColor: i === activeIndex ? '#b8861e' : '#d1d5db',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s',
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* ── Desktop : grille 3 colonnes ── */}
-        <div className="hidden sm:grid grid-auto-3">
+        <div className="why-grid">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (

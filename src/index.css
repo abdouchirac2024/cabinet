@@ -11,6 +11,11 @@
   --font-family-body: 'Raleway', system-ui, sans-serif;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -86,3 +91,14 @@ a {
 /* ── Solutions grid ── */
 .solutions-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
 @media (max-width: 640px) { .solutions-grid { grid-template-columns: 1fr; } }
+
+/* ── WhyChoose carousel / grid toggle ── */
+.why-carousel { display: block; }
+.why-grid    { display: none;  }
+@media (min-width: 640px) {
+  .why-carousel { display: none;  }
+  .why-grid    { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+}
+@media (min-width: 640px) and (max-width: 900px) {
+  .why-grid { grid-template-columns: repeat(2,1fr); }
+}
