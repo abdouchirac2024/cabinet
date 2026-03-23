@@ -90,7 +90,7 @@ export default function Solutions() {
           Nos services
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.25rem' }}>
+        <div className="solutions-grid">
           {solutions.map((sol) => (
             <a
               key={sol.id}

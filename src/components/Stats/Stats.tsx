@@ -2,42 +2,27 @@ import { stats } from '../../data/formations';
 
 export default function Stats() {
   return (
-    <section style={{
-      backgroundColor: '#1D0000',
-      padding: '4rem 0',
-      display: 'flex',
-      justifyContent: 'center',
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
-      {/* Decorative blurs */}
-      <div style={{ position: 'absolute', top: 0, right: 0, width: '18rem', height: '18rem', background: 'rgba(230,35,58,0.1)', borderRadius: '50%', filter: 'blur(60px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '24rem', height: '24rem', background: 'rgba(230,35,58,0.05)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+    <section className="section-pad relative overflow-hidden" style={{ backgroundColor: '#162354' }}>
+      <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: 'rgba(184,134,30,0.08)', filter: 'blur(60px)' }} />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'rgba(184,134,30,0.05)', filter: 'blur(80px)' }} />
 
-      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
-        {/* Titre centré */}
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'white', marginBottom: '0.75rem' }}>
-            Les chiffres clés Cegos
+      <div className="container-xl relative z-10">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Les chiffres clés FCT
           </h2>
-          <p style={{ color: '#9ca3af', fontSize: '1rem' }}>
-            Un acteur de référence de la formation professionnelle depuis plus de 50 ans
+          <p className="text-sm sm:text-base" style={{ color: '#9ca3af' }}>
+            Votre partenaire de confiance en consulting juridique et formation professionnelle
           </p>
         </div>
 
-        {/* Stats grid centré */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '2rem',
-          textAlign: 'center',
-        }}>
+        <div className="stats-grid">
           {stats.map((stat, index) => (
-            <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e6233a', lineHeight: 1 }}>
+            <div key={index} className="flex flex-col items-center gap-2 py-4">
+              <div className="text-4xl sm:text-5xl font-extrabold leading-none" style={{ color: '#b8861e' }}>
                 {stat.value}
               </div>
-              <div style={{ color: '#d1d5db', fontSize: '0.9rem' }}>
+              <div className="text-sm sm:text-base text-center" style={{ color: '#d1d5db' }}>
                 {stat.label}
               </div>
             </div>

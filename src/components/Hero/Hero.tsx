@@ -18,9 +18,7 @@ export default function Hero() {
     const currentPlaceholder = placeholders[placeholderIndex];
     if (isTyping) {
       if (displayText.length < currentPlaceholder.length) {
-        const timeout = setTimeout(() => {
-          setDisplayText(currentPlaceholder.slice(0, displayText.length + 1));
-        }, 60);
+        const timeout = setTimeout(() => setDisplayText(currentPlaceholder.slice(0, displayText.length + 1)), 60);
         return () => clearTimeout(timeout);
       } else {
         const timeout = setTimeout(() => setIsTyping(false), 2000);
@@ -28,9 +26,7 @@ export default function Hero() {
       }
     } else {
       if (displayText.length > 0) {
-        const timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 30);
+        const timeout = setTimeout(() => setDisplayText(displayText.slice(0, -1)), 30);
         return () => clearTimeout(timeout);
       } else {
         setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
@@ -40,42 +36,52 @@ export default function Hero() {
   }, [displayText, isTyping, placeholderIndex]);
 
   return (
-    <section className="relative min-h-[420px] md:min-h-[480px] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'clamp(420px, 60vh, 580px)' }}>
+      {/* Background */}
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80"
-          alt="Consulting juridique et formation"
-          className="w-full h-full object-cover"
+          alt="Consulting juridique"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#162354]/90 via-[#162354]/60 to-[#162354]/20" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,rgba(22,35,84,0.92) 0%,rgba(22,35,84,0.75) 50%,rgba(22,35,84,0.35) 100%)' }} />
       </div>
 
-      <div style={{ position: 'relative', maxWidth: '1200px', width: '100%', padding: '4rem 2rem', margin: '0 auto' }}>
-        <div style={{ maxWidth: '600px' }}>
-          <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: 'white', lineHeight: 1.25, marginBottom: '2.5rem' }}>
-            Expertise juridique &<br />
-            formation professionnelle<br />
-            <span style={{ color: '#b8861e' }}>adaptées à vos besoins</span>
-          </h1>
-        </div>
+      <div className="relative w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        {/* Titre */}
+        <h1 className="font-extrabold text-white leading-tight mb-8 max-w-xl"
+          style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)', lineHeight: 1.2 }}>
+          Expertise juridique &amp; formation professionnelle{' '}
+          <span style={{ color: '#b8861e' }}>adaptées à vos besoins</span>
+        </h1>
 
         {/* Barre de recherche */}
-        <div style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'white', borderRadius: '0.75rem', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', padding: '0.5rem', display: 'flex', alignItems: 'center' }}>
-            <Search size={22} color="#6b7280" style={{ marginLeft: '1rem', marginRight: '0.75rem', flexShrink: 0 }} />
+        <div className="w-full max-w-[640px]">
+          <div className="flex items-center bg-white rounded-xl shadow-2xl overflow-hidden" style={{ padding: '0.35rem' }}>
+            <Search size={20} className="ml-3 mr-2 flex-shrink-0 text-gray-400" />
             <input
               type="text"
               placeholder={displayText + '|'}
-              style={{ flex: 1, padding: '0.875rem 0', fontSize: '1rem', color: '#162354', outline: 'none', background: 'transparent' }}
+              className="flex-1 py-3 text-sm sm:text-base outline-none bg-transparent"
+              style={{ color: '#162354', minWidth: 0 }}
             />
-            <button style={{ backgroundColor: '#b8861e', color: 'white', padding: '0.875rem 1.75rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>
+            <button
+              className="px-4 sm:px-6 py-3 text-white text-sm font-bold rounded-lg flex-shrink-0 transition-opacity hover:opacity-90"
+              style={{ backgroundColor: '#b8861e' }}
+            >
               Rechercher
             </button>
           </div>
-          <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mt-4">
             {['Droit des affaires', 'RGPD', 'Droit du travail', 'Compliance'].map((tag) => (
-              <a key={tag} href="#" style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', padding: '0.35rem 0.9rem', borderRadius: '9999px', fontSize: '0.8rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.3)' }}>
+              <a
+                key={tag}
+                href="#"
+                className="text-white text-xs sm:text-sm px-3 py-1.5 rounded-full transition-all hover:bg-white/30"
+                style={{ backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.35)' }}
+              >
                 {tag}
               </a>
             ))}

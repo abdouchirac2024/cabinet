@@ -18,30 +18,26 @@ const articles = [
 
 export default function Actualites() {
   return (
-    <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
-      <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem', color: '#162354' }}>
+    <section className="section-pad" style={{ backgroundColor: 'white' }}>
+      <div className="container-xl">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" style={{ color: '#162354' }}>
           Nos dernières actualités
         </h2>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+        <div className="grid-auto-3">
           {articles.map((article) => (
             <a
               key={article.id}
               href="#"
-              style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'white', borderRadius: '0.5rem', overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,0.1)', textDecoration: 'none', transition: 'box-shadow 0.2s' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 6px 20px rgba(15,32,68,0.15)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 1px 4px rgba(0,0,0,0.1)'; }}
+              className="flex flex-col rounded-lg overflow-hidden"
+              style={{ backgroundColor: 'white', boxShadow: '0 1px 4px rgba(0,0,0,0.1)', textDecoration: 'none', transition: 'all 0.2s' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 8px 24px rgba(22,35,84,0.15)'; (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-3px)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 1px 4px rgba(0,0,0,0.1)'; (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'; }}
             >
-              <div style={{ aspectRatio: '4/3', overflow: 'hidden' }}>
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
-                />
+              <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover" style={{ transition: 'transform 0.4s' }} />
               </div>
-              <div style={{ padding: '1.25rem 1.5rem', flexGrow: 1, backgroundColor: '#f9f9f9' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#162354', lineHeight: 1.4, margin: 0 }}>
+              <div className="p-4 sm:p-5 flex-grow" style={{ backgroundColor: '#f9f9f9' }}>
+                <h3 className="text-sm sm:text-base font-bold leading-snug" style={{ color: '#162354' }}>
                   {article.title}
                 </h3>
               </div>

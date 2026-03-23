@@ -88,7 +88,7 @@ export default function Footer() {
       {/* Liens */}
       <div style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <div style={{ maxWidth: '1200px', width: '100%', padding: '3rem 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+          <div className='footer-links-grid'>
             {Object.values(footerLinks).map((section) => (
               <div key={section.title}>
                 <h4 style={{ fontWeight: 700, fontSize: '0.875rem', marginBottom: '1rem', color: '#b8861e' }}>
