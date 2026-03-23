@@ -57,19 +57,26 @@ export default function Hero() {
 
         {/* Barre de recherche */}
         <div className="w-full max-w-[640px]">
-          <div className="flex items-center bg-white rounded-xl shadow-2xl overflow-hidden" style={{ padding: '0.35rem' }}>
-            <Search size={20} className="ml-3 mr-2 flex-shrink-0 text-gray-400" />
+          {/* Ligne input + bouton */}
+          <div className="flex items-center bg-white rounded-xl shadow-2xl" style={{ padding: '0.3rem', gap: '0.25rem' }}>
+            <Search size={18} className="ml-3 flex-shrink-0 text-gray-400" />
             <input
               type="text"
               placeholder={displayText + '|'}
-              className="flex-1 py-3 text-sm sm:text-base outline-none bg-transparent"
+              className="flex-1 py-3 px-2 text-sm outline-none bg-transparent"
               style={{ color: '#162354', minWidth: 0 }}
             />
             <button
-              className="px-4 sm:px-6 py-3 text-white text-sm font-bold rounded-lg flex-shrink-0 transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#b8861e' }}
+              className="flex-shrink-0 text-white font-bold rounded-lg transition-opacity hover:opacity-90"
+              style={{
+                backgroundColor: '#b8861e',
+                padding: '0.7rem 0.75rem',
+                fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)',
+                whiteSpace: 'nowrap',
+              }}
             >
-              Rechercher
+              <span className="hidden sm:inline">Rechercher</span>
+              <Search size={18} className="sm:hidden" />
             </button>
           </div>
 
