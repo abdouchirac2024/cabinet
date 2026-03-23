@@ -1,27 +1,31 @@
+import { MapPin } from 'lucide-react';
+
 export default function Centenaire() {
   return (
     <section style={{ padding: '3rem 0', backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem' }}>
         <div
+          className="centenaire-inner"
           style={{
             background: 'linear-gradient(135deg, #162354 0%, #1e3a7a 100%)',
             borderRadius: '1rem',
             padding: '3rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '2rem',
-            flexWrap: 'wrap',
           }}
         >
           {/* Texte gauche */}
           <div style={{ flex: 1, minWidth: '280px' }}>
             <h2 style={{ color: 'white', fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-              Votre partenaire juridique
+              Cabinet d'expertise juridique
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-              Partout où l'expertise juridique<br />rencontre la performance professionnelle
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', marginBottom: '1rem', lineHeight: 1.6 }}>
+              Conseils juridiques &amp; stratégiques, représentation,<br />ingénierie juridique et formation judiciaire
             </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem' }}>
+              <MapPin size={18} color="#b8861e" />
+              <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>
+                Cameroun et à l'international
+              </span>
+            </div>
             <a
               href="/a-propos"
               style={{

@@ -17,12 +17,13 @@ const footerLinks = {
   services: {
     title: "Nos services",
     links: [
-      "Consulting juridique",
-      "Formation intra-entreprise",
-      "Formation sur-mesure",
-      "Accompagnement RH",
-      "Audit et conformité",
-      "Médiation & Arbitrage",
+      "Conseils juridiques",
+      "Représentation judiciaire",
+      "Création d'entreprise",
+      "Rédaction de contrats",
+      "Ingénierie juridique",
+      "Formation judiciaire",
+      "Réforme judiciaire",
     ],
   },
   cabinet: {

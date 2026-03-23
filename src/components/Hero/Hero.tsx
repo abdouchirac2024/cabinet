@@ -2,11 +2,11 @@ import { Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const placeholders = [
-  "Formation droit des affaires",
-  "Compliance et RGPD",
-  "Droit du travail pour managers",
-  "Formation juristes d'entreprise",
-  "Legaltech et outils numériques",
+  "Conseils juridiques",
+  "Représentation judiciaire",
+  "Création d'entreprise",
+  "Formation des acteurs judiciaires",
+  "Ingénierie juridique",
 ];
 
 export default function Hero() {
@@ -51,8 +51,8 @@ export default function Hero() {
         {/* Titre */}
         <h1 className="font-extrabold text-white leading-tight mb-8 max-w-xl"
           style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)', lineHeight: 1.2 }}>
-          Expertise juridique &amp; formation professionnelle{' '}
-          <span style={{ color: '#b8861e' }}>adaptées à vos besoins</span>
+          Cabinet d'expertise juridique{' '}
+          <span style={{ color: '#b8861e' }}>au Cameroun et à l'international</span>
         </h1>
 
         {/* Barre de recherche */}
@@ -82,7 +82,7 @@ export default function Hero() {
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-4">
-            {['Droit des affaires', 'RGPD', 'Droit du travail', 'Compliance'].map((tag) => (
+            {['Conseils juridiques', 'Représentation', 'Création entreprise', 'Formation'].map((tag) => (
               <a
                 key={tag}
                 href="#"

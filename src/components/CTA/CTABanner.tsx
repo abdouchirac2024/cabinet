@@ -13,10 +13,10 @@ export default function CTABanner() {
 
       <div style={{ maxWidth: '1200px', width: '100%', padding: '0 2rem', position: 'relative', zIndex: 1, textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: 'white', marginBottom: '1rem' }}>
-          Vous avez un projet de formation ou de consulting ?
+          Besoin d'un conseil juridique ou d'une représentation ?
         </h2>
         <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', maxWidth: '580px', margin: '0 auto 2.5rem', lineHeight: 1.7 }}>
-          Nos experts vous accompagnent dans la construction de votre plan de développement des compétences juridiques et professionnelles. Contactez-nous pour un devis personnalisé.
+          Notre cabinet vous accompagne dans tous vos projets juridiques : conseils, représentation judiciaire, création d'entreprise, rédaction de contrats et formation. Nos prix sont imbattables.
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
