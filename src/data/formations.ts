@@ -30,18 +30,18 @@ export interface Testimonial {
 }
 
 export const categories: Category[] = [
-  { id: 1, name: "Droit des affaires", icon: "⚖️", count: 40, slug: "droit-des-affaires" },
-  { id: 2, name: "Droit du travail", icon: "📋", count: 35, slug: "droit-du-travail" },
-  { id: 3, name: "Ressources Humaines", icon: "🤝", count: 30, slug: "ressources-humaines" },
-  { id: 4, name: "Management & Leadership", icon: "👥", count: 25, slug: "management-leadership" },
-  { id: 5, name: "Droit pénal des affaires", icon: "🏛️", count: 20, slug: "droit-penal-affaires" },
-  { id: 6, name: "Fiscalité & Finance", icon: "💰", count: 28, slug: "fiscalite-finance" },
-  { id: 7, name: "Compliance & RGPD", icon: "🛡️", count: 22, slug: "compliance-rgpd" },
-  { id: 8, name: "Droit immobilier", icon: "🏢", count: 18, slug: "droit-immobilier" },
-  { id: 9, name: "Communication juridique", icon: "💬", count: 15, slug: "communication-juridique" },
-  { id: 10, name: "Formation des avocats", icon: "👨‍⚖️", count: 20, slug: "formation-avocats" },
-  { id: 11, name: "Développement Personnel", icon: "🎯", count: 15, slug: "developpement-personnel" },
-  { id: 12, name: "Digital & Legaltech", icon: "💻", count: 12, slug: "digital-legaltech" },
+  { id: 1, name: "Droit des affaires", icon: "Scale", count: 40, slug: "droit-des-affaires" },
+  { id: 2, name: "Droit du travail", icon: "ClipboardList", count: 35, slug: "droit-du-travail" },
+  { id: 3, name: "Ressources Humaines", icon: "Handshake", count: 30, slug: "ressources-humaines" },
+  { id: 4, name: "Management & Leadership", icon: "Users", count: 25, slug: "management-leadership" },
+  { id: 5, name: "Droit pénal des affaires", icon: "Landmark", count: 20, slug: "droit-penal-affaires" },
+  { id: 6, name: "Fiscalité & Finance", icon: "Coins", count: 28, slug: "fiscalite-finance" },
+  { id: 7, name: "Compliance & RGPD", icon: "ShieldCheck", count: 22, slug: "compliance-rgpd" },
+  { id: 8, name: "Droit immobilier", icon: "Building2", count: 18, slug: "droit-immobilier" },
+  { id: 9, name: "Communication juridique", icon: "MessageSquare", count: 15, slug: "communication-juridique" },
+  { id: 10, name: "Formation des avocats", icon: "GraduationCap", count: 20, slug: "formation-avocats" },
+  { id: 11, name: "Développement Personnel", icon: "Target", count: 15, slug: "developpement-personnel" },
+  { id: 12, name: "Digital & Legaltech", icon: "Laptop", count: 12, slug: "digital-legaltech" },
 ];
 
 export const formations: Formation[] = [
